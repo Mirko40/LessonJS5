@@ -13,8 +13,10 @@ function infoCar() {
     }
 }
 function getTimeRoad(l) {
-    return l / (car["average speed"])
+    let t = Math.trunc(l / (car["average speed"]) / 4)
+    if (t <= 0) { return l / (car["average speed"]) + " " + "hour" }
+    return t + l / (car["average speed"]) + " " + "hour"
 }
 infoCar()
-let a = getTimeRoad(200)
+let a = getTimeRoad(1200)
 console.log(a)
