@@ -23,7 +23,7 @@ function getTimeRoad(l) {
 
 let frack1 = {
     num: 2,
-    denom: 3,
+    denom: 6,
 }
 let frack2 = {
     num: 5,
@@ -48,6 +48,23 @@ function getFrackMult() {
 function getFrackDiv() {
     return frack1.num * frack2.denom + "/" + frack1.denom * frack2.num
 }
+function getFrackReduc() {
+    let a = frack1.num;
+    let b = frack1.denom;
+    a = Math.abs(a);
+    b = Math.abs(b);
+    if (a == 0) {
+        return frack1.num / b + "/" + frack1.denom / b
+    }
+    else while (b != 0) {
+        if (a > b)
+            a = a - b;
+        else
+            b = b - a;
+    };
+    return frack1.num / a + "/" + frack1.denom / a;
+};
 
-let b = getFrackDiv()
+
+let b = getFrackReduc()
 console.log(b)
