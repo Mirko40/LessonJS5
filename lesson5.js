@@ -45,6 +45,9 @@ function getFrackSub() {
 function getFrackMult() {
     return frack1.num * frack2.num + "/" + frack1.denom * frack2.denom
 }
+function getFrackDiv() {
+    return frack1.num * frack2.denom + "/" + frack1.denom * frack2.num
+}
 
-let b = getFrackMult()
+let b = getFrackDiv()
 console.log(b)
