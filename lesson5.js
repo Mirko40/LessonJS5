@@ -14,7 +14,8 @@ function infoCar() {
 }
 function getTimeRoad(l) {
     let t = Math.trunc(l / (car["average speed"]) / 4)
-    if (t <= 1) { return l / (car["average speed"]) + " " + "hour" }
+    if (t = (l / (car["average speed"]))) { return l / (car["average speed"]) + " " + "hour" }
+    if (t < 1) { return l / (car["average speed"]) + " " + "hour" }
     return t + l / (car["average speed"]) + " " + "hour"
 }
 // infoCar()
@@ -66,5 +67,5 @@ function getFrackReduc() {
 };
 
 
-let b = getFrackReduc()
-console.log(b)
+// let b = getFrackReduc()
+// console.log(b)
