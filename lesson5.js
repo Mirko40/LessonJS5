@@ -72,7 +72,7 @@ function getFrackReduc() {
 
 let time = {
     hour: 23,
-    minute: 59,
+    minute: 50,
     second: 22,
 
 };
@@ -83,13 +83,13 @@ function showTime() {
 }
 
 
-function getTime(a) {
+function getTimeSec(a) {
     time.second = time.second + a
     if (time.second >= 60) {
         time.minute = time.minute + Math.trunc(time.second / 60)
         if (time.minute >= 60) {
             time.hour = time.hour + Math.trunc(time.minute / 60)
-            if (time.hour >= 23) {
+            if (time.hour > 23) {
                 time.hour = time.hour % 24
             }
             time.minute = time.minute % 60
@@ -97,6 +97,25 @@ function getTime(a) {
         time.second = time.second % 60
     }
 }
+function getTimeMin(b) {
+    time.minute = time.minute + b
+    if (time.minute >= 60) {
+        time.hour = time.hour + Math.trunc(time.minute / 60)
+        if (time.hour > 23) {
+            time.hour = time.hour % 24
+        }
+        time.minute = time.minute % 60
+    }
 
-getTimeSec(3600)
+}
+function getTimeHour(c) {
+    time.hour = time.hour + c
+    if (time.hour > 23) {
+        time.hour = time.hour % 24
+    }
+}
+
+
+
+getTimeSec(600)
 showTime()
