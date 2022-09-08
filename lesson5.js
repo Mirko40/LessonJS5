@@ -69,3 +69,27 @@ function getFrackReduc() {
 
 // let b = getFrackReduc()
 // console.log(b)
+
+let time = {
+    hour: 20,
+    minute: 17,
+    second: 22,
+
+};
+function showTime() {
+    for (let key in time) {
+        console.log([key] + ":" + time[key])
+    }
+}
+
+
+function getTimeSec(a) {
+    time.second = time.second + a
+    if (time.second >= 60) {
+        time.minute = time.minute + Math.trunc(time.second / 60)
+        time.second = time.second % 60
+    }
+}
+
+getTimeSec(40)
+showTime()
